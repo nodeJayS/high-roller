@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 export default class BetView extends Component {
     constructor(props) {
@@ -78,58 +80,70 @@ export default class BetView extends Component {
 
     render() {
         return (
-            <div className='container'>
-                {/* Balance */}
-                <h4>Balance</h4>
-                <label id='balance'>
-                    $ {this.props.balance.toFixed(2)}
-                </label>
-                
-                {/* Seed generator */} 
+            <div className='container game-body'>
+                {/* Seed generator */}
+                <h4>Player Seed</h4>
                 <input value={this.props.seed} readOnly={true} />
                 <button className='game-button' onClick={this.randomizeSeed}>Randomize seed</button>
 
+                {/* Balance */}
+                <h4>Balance</h4>
+                <div id='balance'>
+                    $ {this.props.balance.toFixed(2)}
+                </div> 
+
                 {/* Result and target indicator*/}
                 <div>
-                    <div style={{color: `${this.props.resultColor}`}}>{this.props.lastRoll}</div>
+                    <h2 className='game-result' style={{color: `${this.props.resultColor}`}}>RESULT: {this.props.lastRoll}</h2>
                     <div>Target: less than {this.props.lastTarget}</div>
                 </div>
 
                 {/* Multiplier */}
-                <form>
+                <Form>
                     <h4>Multiplier</h4>
-                    <input
+                    <InputGroup>
+                        <InputGroup.Prepend>
+                            <InputGroup.Text>x</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control
                         type='number'
                         value={this.props.multiplier}
                         onChange={this.updateMultiplier}
                         placeholder='Multiplier'
                     />
-                    <label>{(this.props.target)} %</label>
+                    <InputGroup.Append>
+                        <InputGroup.Text>{(this.props.target).toFixed(2)} %</InputGroup.Text>
+                    </InputGroup.Append>
+                    </InputGroup>
 
-                {/* Place bet */}
-                <h4>Bet</h4>
-                <input
-                    type='number'
-                    value={this.props.betAmount} 
-                    onChange={this.handleBetChange}
-                    placeholder='Your bet'
-                />
-
-                {/* Errors */}
-                {this.state.errorMessage && 
-                    <div>
-                        Error: {this.state.errorMessage}
-                    </div>}
+                    {/* Place bet */}
+                    <h4>Bet</h4>
+                    <InputGroup>
+                        <InputGroup.Prepend>
+                            <InputGroup.Text><i className="fas fa-dollar-sign"></i></InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control
+                        type='number'
+                        value={this.props.betAmount} 
+                        onChange={this.handleBetChange}
+                        placeholder='Your bet'
+                    />
+                    </InputGroup>
+                    {/* Errors */}
+                    {this.state.errorMessage && 
+                        <div>
+                            Error: {this.state.errorMessage}
+                        </div>}
                 
-                {/* Bet manipulation */}
-                <button className='game-button' onClick={this.doubleBet}>
-                    Double
-                </button>
+                    {/* Bet manipulation */}
+                    <button className='game-button' onClick={this.doubleBet}>
+                        Double
+                    </button>
 
-                <button className='game-button' onClick={this.halveBet}>
-                    Half
-                </button>
-                </form>
+                    <button className='game-button' onClick={this.halveBet}>
+                        Half
+                    </button>
+                </Form>
 
                 <button className='game-button' onClick={() => this.handleBet()}>
                     Roll

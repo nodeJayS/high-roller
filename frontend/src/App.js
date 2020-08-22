@@ -9,8 +9,11 @@ export default class App extends Component {
     return (
       <div className='container'>
         <NavBar />
-        <BetView />
-        <BetHistory />
+        <div>        
+          <BetView />
+          <BetHistory />
+        </div>
+
       </div>
     );
   };

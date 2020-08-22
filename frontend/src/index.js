@@ -7,6 +7,7 @@ import Root from './Root'; // Root.js imports App.js
 import './css/index.css';
 import './css/dice.css';
 import './css/nav.css';
+import './css/modal.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore({});
