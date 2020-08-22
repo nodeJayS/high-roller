@@ -1,0 +1,9 @@
+.game-button {
+    background-color: rgb(82, 186, 179);
+    border-radius: 6px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    width: auto;
+    margin: auto;
+}
