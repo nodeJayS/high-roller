@@ -78,7 +78,7 @@ export default class BetView extends Component {
 
     render() {
         return (
-            <div>
+            <div className='container'>
                 {/* Balance */}
                 <h4>Balance</h4>
                 <label id='balance'>

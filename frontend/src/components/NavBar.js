@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavbarBrand from 'react-bootstrap/NavbarBrand';
-import NavLink from 'react-bootstrap/NavLink';
 
-import Login from './Login';
-import Register from './Register';
+// import Login from './Login';
+// import Register from './Register';
+import About from './About';
 
 export default class NavBar extends Component {
     constructor(props) {
@@ -15,17 +14,18 @@ export default class NavBar extends Component {
 
     loadNav = () => {
         return (
-        <div className='container'>
-        <NavbarBrand >
-            <NavLink>
-            <h3>Casino</h3>
-            </NavLink>
-        </NavbarBrand>
-        <Nav>
-            <Login />
-            <Register />
-        </Nav>
-
+        <div className='container nav-container'>
+            <div className='nav-title'>
+                <h2>HIGH-ROLLER</h2>
+            </div>
+            <Nav>
+                <About />
+                <a href='https://github.com/nodeJayS/high-roller'><i className="fab fa-github"> </i>GITHUB</a>
+            </Nav>
+            {/* <Nav>
+                <Login />
+                <Register />
+            </Nav> */}
         </div>
         )
     }

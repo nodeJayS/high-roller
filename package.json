@@ -4,7 +4,9 @@
   "description": "Provably fair dice game",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "frontend": "npm start --prefix frontend" 
   },
   "author": "Jay",
   "license": "ISC",
@@ -15,9 +17,11 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.0",
     "mongoose": "^5.10.0",
-    "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "validator": "^13.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

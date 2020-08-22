@@ -21,10 +21,10 @@ export default class BetHistory extends Component {
 
     historyTable = () => {
         return (
-            <Table>
+            <Table variant='dark'>
                 <thead>
                     <tr>
-                        <th>Amount</th>
+                        <th>Bet Amount</th>
                         <th>Under Target</th>
                         <th>Roll</th>
                         <th>Winnings</th>
@@ -39,8 +39,8 @@ export default class BetHistory extends Component {
                             <td>{bet.result}</td>
                             <td>{bet.winnings}</td>
                             <td>
-                                <button onClick={this.toggleModal}>Verify</button>
-                                <Modal show={this.state.show} onHide={this.toggleModal} size='lg' animation={false}>
+                                <button className='game-button' onClick={this.toggleModal}>Verify</button>
+                                <Modal show={this.state.show} onHide={this.toggleModal} size='lg'>
                                     <Modal.Header>
                                         <Modal.Title>Provably-Fair Verification</Modal.Title>
                                     </Modal.Header>
@@ -57,7 +57,7 @@ export default class BetHistory extends Component {
                                         <div>{crypto.createHash('sha256').update(bet.seed + '_' + bet.timestamp + '_' + bet.nonce).digest('hex')}</div>
                                     </Modal.Body>
                                     <Modal.Footer>
-                                        <button onClick={this.toggleModal}>Close</button>
+                                        <button className='game-button' onClick={this.toggleModal}>Close</button>
                                     </Modal.Footer>
                                 </Modal>
                                 
@@ -72,7 +72,7 @@ export default class BetHistory extends Component {
 
     render() {
         return (
-            <div>
+            <div className='container'>
                 <h4>History</h4>
                 <div>{this.historyTable()}</div>
             </div>

@@ -31,7 +31,7 @@ export default class Register extends Component {
                         <Form.Group>
                             <InputGroup>
                                 <InputGroup.Prepend>
-                                <InputGroup.Text><icon className="fas fa-user"></icon></InputGroup.Text>
+                                <InputGroup.Text><i className="fas fa-user"></i></InputGroup.Text>
                             </InputGroup.Prepend>
                             <Form.Control
                                 placeholder="Username"
@@ -42,7 +42,7 @@ export default class Register extends Component {
                         <Form.Group>
                             <InputGroup>
                                 <InputGroup.Prepend>
-                                <InputGroup.Text><i class="fas fa-key"></i></InputGroup.Text>
+                                <InputGroup.Text><i className="fas fa-key"></i></InputGroup.Text>
                                 </InputGroup.Prepend>
                             <Form.Control type="string" readOnly/>
                             </InputGroup>
