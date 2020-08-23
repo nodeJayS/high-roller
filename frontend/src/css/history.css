@@ -1,0 +1,12 @@
+.game-history {
+    border-radius: 6px;
+}
+
+.game-history thead{
+    border-bottom: 1px solid #454d55;
+}
+
+.game-history tbody tr td{ 
+    border-bottom: 1px solid #454d55;
+    vertical-align: middle;
+}

@@ -80,24 +80,34 @@ export default class BetView extends Component {
 
     render() {
         return (
-            <div className='container game-body'>
+            <div className='container'>
+            <div className='game-body'>
+
+            <div className='row'>
+            <div className='col-sm'>
                 {/* Seed generator */}
                 <h4>Player Seed</h4>
                 <input value={this.props.seed} readOnly={true} />
                 <button className='game-button' onClick={this.randomizeSeed}>Randomize seed</button>
-
+            </div>            
+            <div className='col-sm'>
                 {/* Balance */}
                 <h4>Balance</h4>
                 <div id='balance'>
                     $ {this.props.balance.toFixed(2)}
                 </div> 
+            </div>
+            </div>
 
+            <div className='row'>
+            <div className='col-sm'>
                 {/* Result and target indicator*/}
                 <div>
                     <h2 className='game-result' style={{color: `${this.props.resultColor}`}}>RESULT: {this.props.lastRoll}</h2>
                     <div>Target: less than {this.props.lastTarget}</div>
                 </div>
-
+            </div>
+            <div className='col-sm'>
                 {/* Multiplier */}
                 <Form>
                     <h4>Multiplier</h4>
@@ -144,10 +154,13 @@ export default class BetView extends Component {
                         Half
                     </button>
                 </Form>
+            </div>
+            </div>
 
                 <button className='game-button' onClick={() => this.handleBet()}>
                     Roll
                 </button>
+            </div>
             </div>
         )
     };

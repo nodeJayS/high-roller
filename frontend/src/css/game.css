@@ -14,16 +14,11 @@ h4, h2{
     text-align: center;
 }
 
-.game-button {
-    background-color: rgb(82, 186, 179);
+.game-body {
+    background-color: #353A40;
     border-radius: 6px;
-    border: none;
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    width: auto;
-    margin: auto;
 }
 
-.game-result {
-
+#balance {
+    font-size: 24px;
 }

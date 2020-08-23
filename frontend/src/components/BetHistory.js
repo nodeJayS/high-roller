@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 let crypto = require('crypto');
 
@@ -21,7 +22,7 @@ export default class BetHistory extends Component {
 
     historyTable = () => {
         return (
-            <Table variant='dark'>
+            <Table responsive variant='dark' className='game-history' borderless>
                 <thead>
                     <tr>
                         <th>Bet Amount</th>
@@ -39,13 +40,13 @@ export default class BetHistory extends Component {
                             <td>{bet.result}</td>
                             <td>{bet.winnings}</td>
                             <td>
-                                <button className='game-button' onClick={this.toggleModal}>Verify</button>
+                                <Button className='modal-button' size='sm' onClick={this.toggleModal}>Verify</Button>
                                 <Modal show={this.state.show} onHide={this.toggleModal} size='lg'>
                                     <Modal.Header>
                                         <Modal.Title>Provably-Fair Verification</Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
-                                        <h4>Seed</h4>
+                                        <h4>Player seed</h4>
                                         <div>{bet.seed}</div>
                                         <h4>Timestamp</h4>
                                         <div>{bet.timestamp}</div>

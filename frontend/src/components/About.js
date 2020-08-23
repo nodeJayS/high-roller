@@ -29,7 +29,7 @@ export default class About extends Component {
                     </Modal.Body>
 
                     <Modal.Footer>
-                        <button className='btn btn-primary' type='submit' onClick={this.toggleModal}>Close</button>
+                        <button className='game-button' type='submit' onClick={this.toggleModal}>Close</button>
                     </Modal.Footer>
                 </Modal>
             </div>
