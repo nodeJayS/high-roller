@@ -59,8 +59,8 @@ export default class BetView extends Component {
         this.setState({errorMessage: ''});
 
         //Check if bet is less than zero
-        if (data.betAmount < 0) {
-            this.setState({errorMessage: `Bet can't be less than zero`})
+        if (data.betAmount <= 0) {
+            this.setState({errorMessage: `Bet can't be zero or less`})
         } else if (isNaN(data.betAmount)) {
             this.setState({errorMessage: `Bet is not a number`})
         } else if (data.balance - data.betAmount < 0) {
@@ -87,7 +87,7 @@ export default class BetView extends Component {
             <div className='col-sm'>
                 {/* Seed generator */}
                 <h4>Player Seed</h4>
-                <input value={this.props.seed} readOnly={true} />
+                <input className='game-input' value={this.props.seed} readOnly={true} />
                 <button className='game-button' onClick={this.randomizeSeed}>Randomize seed</button>
             </div>            
             <div className='col-sm'>
@@ -103,16 +103,24 @@ export default class BetView extends Component {
             <div className='col-sm'>
                 {/* Result and target indicator*/}
                 <div>
-                    <h2 className='game-result' style={{color: `${this.props.resultColor}`}}>RESULT: {this.props.lastRoll}</h2>
-                    <div>Target: less than {this.props.lastTarget}</div>
+                    <h4>Result: </h4>
+                    <h2 className='game-result' style={{color: `${this.props.resultColor}`}}>
+                        {this.props.lastRoll}
+                    </h2>
+                    <h4>Target: </h4>
+                    <h4 className='game-input'>less than {this.props.lastTarget}</h4>
                 </div>
+                <button className='game-button' onClick={() => this.handleBet()}>
+                    <i className="fas fa-dice"></i> Roll
+                </button>
             </div>
+            
             <div className='col-sm'>
             <div className='container'>
                 {/* Multiplier */}
                 <Form>
                     <h4>Multiplier</h4>
-                    <InputGroup>
+                    <InputGroup className='game-input'>
                         <InputGroup.Prepend>
                             <InputGroup.Text>x</InputGroup.Text>
                     </InputGroup.Prepend>
@@ -129,16 +137,16 @@ export default class BetView extends Component {
 
                     {/* Place bet */}
                     <h4>Bet</h4>
-                    <InputGroup>
+                    <InputGroup className='game-input'>
                         <InputGroup.Prepend>
                             <InputGroup.Text><i className="fas fa-dollar-sign"></i></InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                        type='number'
-                        value={this.props.betAmount} 
-                        onChange={this.handleBetChange}
-                        placeholder='Your bet'
-                    />
+                        </InputGroup.Prepend>
+                        <Form.Control
+                            type='number'
+                            value={this.props.betAmount} 
+                            onChange={this.handleBetChange}
+                            placeholder='Your bet'
+                        />
                     </InputGroup>
                     {/* Errors */}
                     {this.state.errorMessage && 
@@ -158,10 +166,6 @@ export default class BetView extends Component {
             </div>
             </div>
             </div>
-
-                <button className='game-button' onClick={() => this.handleBet()}>
-                    Roll
-                </button>
             </div>
             </div>
         )

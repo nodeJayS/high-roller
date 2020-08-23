@@ -5,3 +5,17 @@
 .nav-container{
     margin-top: 12px;
 }
+
+.nav-div{
+    margin: 6px;
+    color: white;
+}
+
+a {
+    color: white !important;
+}
+
+.nav-div:hover {
+    color: var(--button-color) !important;
+    cursor: pointer;
+}

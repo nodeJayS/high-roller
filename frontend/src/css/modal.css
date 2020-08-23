@@ -5,4 +5,10 @@
 .modal-header {
     color: white;
     background-color: var(--light-gray);
+    justify-content: center;
+}
+
+.modal-footer {
+    justify-content: center;
+    border: none;
 }

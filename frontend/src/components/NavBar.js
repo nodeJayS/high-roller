@@ -16,11 +16,11 @@ export default class NavBar extends Component {
         return (
         <div className='container nav-container'>
             <div className='nav-title'>
-                <h2><i className="fas fa-dice"></i>HIGH-ROLLER</h2>
+                <h2><i className="fas fa-dice"></i> HIGH-ROLLER</h2>
             </div>
             <Nav>
                 <About />
-                <a href='https://github.com/nodeJayS/high-roller'><i className="fab fa-github"> </i>GITHUB</a>
+                <a className='nav-div' href='https://github.com/nodeJayS/high-roller'><i className="fab fa-github"></i> GITHUB</a>
             </Nav>
             {/* <Nav>
                 <Login />

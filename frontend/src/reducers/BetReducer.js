@@ -39,6 +39,7 @@ export default function(state = initialState, action) {
                 result: action.payload.result,
                 betAmount: action.payload.betAmount,
                 target: action.payload.target,
+                multiplier: action.payload.multiplier,
                 winnings: action.payload.winnings,
                 timestamp: action.payload.timestamp,
                 seed: action.payload.seed,

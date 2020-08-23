@@ -18,7 +18,7 @@ export default class About extends Component {
     render() {
         return (
             <div>
-                <div onClick={this.toggleModal}><i className="fas fa-question-circle"> </i>ABOUT</div>
+                <div className='nav-div' onClick={this.toggleModal}><i className="fas fa-question-circle"></i> ABOUT</div>
                 <Modal show={this.state.show} onHide={this.toggleModal} size='lg'>
                     <Modal.Header>
                         <Modal.Title>ABOUT US</Modal.Title>
