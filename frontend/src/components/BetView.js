@@ -108,6 +108,7 @@ export default class BetView extends Component {
                 </div>
             </div>
             <div className='col-sm'>
+            <div className='container'>
                 {/* Multiplier */}
                 <Form>
                     <h4>Multiplier</h4>
@@ -154,6 +155,7 @@ export default class BetView extends Component {
                         Half
                     </button>
                 </Form>
+            </div>
             </div>
             </div>
 

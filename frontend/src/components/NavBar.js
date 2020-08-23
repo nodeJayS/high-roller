@@ -16,7 +16,7 @@ export default class NavBar extends Component {
         return (
         <div className='container nav-container'>
             <div className='nav-title'>
-                <h2>HIGH-ROLLER</h2>
+                <h2><i className="fas fa-dice"></i>HIGH-ROLLER</h2>
             </div>
             <Nav>
                 <About />

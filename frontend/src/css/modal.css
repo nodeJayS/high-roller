@@ -1,3 +1,8 @@
 .modal {
-    color: #222222 !important;
+    color: var(--dark-gray) !important;
+}
+
+.modal-header {
+    color: white;
+    background-color: var(--light-gray);
 }

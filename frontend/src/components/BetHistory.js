@@ -74,7 +74,7 @@ export default class BetHistory extends Component {
     render() {
         return (
             <div className='container'>
-                <h4>History</h4>
+                <h4 className='history-title'>History</h4>
                 <div>{this.historyTable()}</div>
             </div>
         )

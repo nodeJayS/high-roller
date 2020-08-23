@@ -1,12 +1,13 @@
 .game-history {
     border-radius: 6px;
+    margin-top: 12px;
 }
 
-.game-history thead{
-    border-bottom: 1px solid #454d55;
-}
-
-.game-history tbody tr td{ 
-    border-bottom: 1px solid #454d55;
+.game-history td{ 
+    border-top: 1px solid #454d55;
     vertical-align: middle;
+}
+
+.history-title {
+    margin-top: 16px;
 }

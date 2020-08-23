@@ -1,5 +1,5 @@
 .game-button {
-    background-color: #7bb850;
+    background-color: var(--button-color);
     border-radius: 6px;
     border: none;
     color: rgb(255, 255, 255);
@@ -10,29 +10,29 @@
 }
 
 .game-button:hover {
-    background-color: #228822;
+    background-color: var(--hover-color);
 }
 
 .modal-button {
-    background-color: #7bb850;
+    background-color: var(--button-color);
     border-style: none;
     border-radius: 6px;
     transition-duration: 0.3s;
 }
 
 .btn:hover {
-    background-color: #228822;
+    background-color: var(--hover-color);
     border-style: none !important;
 }
 
 .btn:active {
-    background-color: #228822 !important;
+    background-color: var(--hover-color)!important;
     border-style: none !important;
     box-shadow: none;
 }
 
 .btn:focus {
-    background-color: #228822 !important;
+    background-color: var(--hover-color)!important;
     border-style: none !important;
     outline: none !important;
     box-shadow: none;
