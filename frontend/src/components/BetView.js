@@ -7,6 +7,7 @@ export default class BetView extends Component {
         super(props);
         this.state = {
             errorMessage: '',
+            number: 1,
         }
         this.handleBetChange = this.handleBetChange.bind(this);
         this.doubleBet = this.doubleBet.bind(this);
@@ -15,7 +16,7 @@ export default class BetView extends Component {
         this.updateMultiplier = this.updateMultiplier.bind(this);
     };
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.props.userData();
         this.props.createSeedFunc();
     };
@@ -37,16 +38,57 @@ export default class BetView extends Component {
         this.props.updateBetAmt(bet)
     };
 
-    randomizeSeed() {
+    randomizeSeed = () => {
         this.props.createSeedFunc()
     };
 
-    updateMultiplier(e) {
+    updateMultiplier = (e) => {
         let multi = e.target.value
         this.props.updateMultiAmt(multi)
     };
 
-    handleBet() {
+    // Function used for RNG
+    generateNumber = () => {
+        let randomNum = Math.floor( 1 + Math.random() * 100 )
+        this.setState({
+            number: randomNum
+        })
+        console.log(randomNum)
+    };
+
+    // Animates 20 random numbers then calls bet function once finished
+    numberLoop =  (data) => {
+        for (let i = 0; i < 20; i++){
+            ((i) => {
+                setTimeout(() => {
+                    this.generateNumber();
+                    if (i === 19) {
+                        setTimeout(() => {
+                            this.betFunc(data);
+                        });
+                    }
+                }, 20 * i);
+            })(i)
+        };
+    };
+    
+    betFunc = (data) => {
+        //Deduct bet from balance
+        this.props.placeBetFunc(data.betAmount)
+        this.props.handleBet(data)
+            .then(res => {
+                let win = res.payload.winnings
+                if(win > 0) {
+                    this.props.winBetFunc(win)
+                }
+                this.setState({
+                    number: res.payload.lastRoll
+                })
+                console.log(res.payload.lastRoll)
+            })
+    };
+
+    handleBet = () => {
         let data = {
             balance: this.props.balance,
             seed: this.props.seed,
@@ -54,7 +96,6 @@ export default class BetView extends Component {
             target:this.props.target,
             betAmount: this.props.betAmount,
         }
-        
         //Clear error state
         this.setState({errorMessage: ''});
 
@@ -66,15 +107,7 @@ export default class BetView extends Component {
         } else if (data.balance - data.betAmount < 0) {
             this.setState({errorMessage: `Insufficient balance!`})
         } else {
-            //Deduct bet from balance
-            this.props.placeBetFunc(data.betAmount);
-            this.props.handleBet(data)
-                .then(res => {
-                    let win = res.payload.winnings
-                    if(win > 0) {
-                        this.props.winBetFunc(win)
-                    }
-                })
+            this.numberLoop(data)
         }
     };
 
@@ -105,7 +138,7 @@ export default class BetView extends Component {
                 <div>
                     <h4>Result: </h4>
                     <h2 className='game-result' style={{color: `${this.props.resultColor}`}}>
-                        {this.props.lastRoll}
+                        {this.state.number}
                     </h2>
                     <h4>Target: </h4>
                     <h4 className='game-input'>less than {this.props.lastTarget}</h4>
