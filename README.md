@@ -6,7 +6,7 @@ High-Roller is a dice game utilizing a provably-fair algorithm.
 
 ## Stack/Tech
 
-Language: Javascript
+Language: Javascript  
 Tech: React, Redux, HTML, CSS
 
 ## Current features
