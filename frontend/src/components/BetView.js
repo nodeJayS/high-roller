@@ -7,7 +7,7 @@ export default class BetView extends Component {
         super(props);
         this.state = {
             errorMessage: '',
-            number: 1,
+            number: '∞',
         }
         this.handleBetChange = this.handleBetChange.bind(this);
         this.doubleBet = this.doubleBet.bind(this);
