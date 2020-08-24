@@ -11,7 +11,8 @@ Tech: React, Redux, HTML, CSS
 
 ## Current features
 
-- Ability to initiate bet
+- Provably-fair bet system
+- Resettable client seed
 - Adjustable multiplier and bet amount
 - Available history of all previous bets
 
