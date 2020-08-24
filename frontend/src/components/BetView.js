@@ -52,8 +52,7 @@ export default class BetView extends Component {
         let randomNum = Math.floor( 1 + Math.random() * 100 )
         this.setState({
             number: randomNum
-        })
-        console.log(randomNum)
+        });
     };
 
     // Animates 20 random numbers then calls bet function once finished
@@ -83,9 +82,8 @@ export default class BetView extends Component {
                 }
                 this.setState({
                     number: res.payload.lastRoll
-                })
-                console.log(res.payload.lastRoll)
-            })
+                });
+            });
     };
 
     handleBet = () => {

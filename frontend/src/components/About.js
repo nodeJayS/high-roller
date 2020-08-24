@@ -29,7 +29,7 @@ export default class About extends Component {
                             High-roller is a provably fair dice game with a 1% house edge.
                             The outcome is generated through a combination of a client seed, server seed and server seed hash.
                             The server seed hash is processed through a SHA512 algorithm.
-                            All outcomes are in a range from 1-100.
+                            All outcomes are in a range from 0-100.
                         </div>
                     </Modal.Body>
 
