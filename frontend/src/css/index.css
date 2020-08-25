@@ -2,7 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif !important;
     -webkit-font-smoothing: antialiased;
     background-color: #222222 !important;
-    color: white ;
+    color: white !important;
     --button-color: #7bb850;
     --hover-color: #228822;
     --dark-gray: #222222;
