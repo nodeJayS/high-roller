@@ -5,7 +5,7 @@
 .modal-header {
     color: white;
     background-color: var(--light-gray);
-    justify-content: center;
+    justify-content: center !important;
 }
 
 .modal-footer {
