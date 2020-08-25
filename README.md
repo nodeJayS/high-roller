@@ -16,7 +16,7 @@ Tech: React, Redux, HTML, CSS
 - Adjustable multiplier and bet amount
 - Available history of all previous bets
 
-## In progress features
+## Features in progress
 
 - User auth including sign-in, sign-out and registration
 
