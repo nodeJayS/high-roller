@@ -2,7 +2,7 @@
 
 High-Roller is a dice game utilizing a provably-fair algorithm.
 
-[Click here to visit the live site] (https://suspicious-heisenberg-5e8849.netlify.app)
+[Click here to visit the live site](https://suspicious-heisenberg-5e8849.netlify.app)
 
 ![High-Roller main page](/images/HighRoller1.JPG)
 

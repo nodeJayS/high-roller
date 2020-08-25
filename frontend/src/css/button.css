@@ -11,14 +11,14 @@
 }
 
 .game-button:hover {
-    background-color: var(--hover-color);
+    background-color: var(--hover-color) !important;
 }
 
 .modal-button {
     background-color: var(--button-color) !important;
-    border-style: none;
-    border-radius: 6px;
-    transition-duration: 0.3s;
+    border-style: none !important;
+    border-radius: 6px !important;
+    transition-duration: 0.3s !important;
 }
 
 .btn:hover {
@@ -29,12 +29,12 @@
 .btn:active {
     background-color: var(--hover-color)!important;
     border-style: none !important;
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .btn:focus {
     background-color: var(--hover-color)!important;
     border-style: none !important;
     outline: none !important;
-    box-shadow: none;
+    box-shadow: none !important;
 }
