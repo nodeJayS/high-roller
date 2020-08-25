@@ -16,7 +16,7 @@ h2 {
 }
 
 .game-input{
-    margin-bottom: 12px;
+    margin-bottom: 12px !important;
 }
 
 .game-body h4, div{
@@ -24,10 +24,10 @@ h2 {
 }
 
 .game-body {
-    margin-top: 12px;
+    margin-top: 12px !important;
     background-color: var(--light-gray);
     border-radius: 6px;
-    padding: 12px;
+    padding: 12px !important;
 }
 
 #balance {

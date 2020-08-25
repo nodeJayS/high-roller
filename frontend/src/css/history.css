@@ -4,7 +4,7 @@
 }
 
 .game-history td { 
-    border-top: 1px solid #454d55;
+    border-top: 1px solid #454d55 !important;
     vertical-align: middle;
 }
 
